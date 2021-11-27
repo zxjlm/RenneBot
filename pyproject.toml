@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "rennebot"
+version = "0.1.0"
+description = ""
+authors = ["harumonia <zxjlm233@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+SQLAlchemy = "^1.4.27"
+python-telegram-bot = "^13.8.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[[tool.poetry.source]]
+name = "douban"
+url = "https://pypi.doubanio.com/simple/"
