@@ -4,6 +4,8 @@
 
 ## features
 
-- ping \ pong
-- server management
-- ...
+- [ ] ping \ pong
+- [ ] server management
+- [ ] task management
+  - [ ] Spider management
+- [ ] ...
