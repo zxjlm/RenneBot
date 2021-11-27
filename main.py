@@ -6,10 +6,26 @@
 # Description：
 """
 
-from settings import Base, sqlite_engine
+import os
+import logging
+from telegram.ext import Updater
+from telegram import Update
+from telegram.ext import CallbackContext
+from telegram.ext import CommandHandler
+
+updater = Updater(token=os.getenv('TG_BOT_TOKEN'), use_context=True)
+
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+dispatcher = updater.dispatcher
 
 
-def init_db():
-    from plugins.server_monitor.models import Server
+def start(update: Update, context: CallbackContext):
+    context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
 
-    Base.metadata.create_all(sqlite_engine)
+
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
+
+
